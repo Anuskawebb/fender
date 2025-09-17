@@ -1,4 +1,3 @@
-
 "use client";
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -7,7 +6,6 @@ import { cn } from "@/lib/utils";
 
 import { ShimmerButton } from "../magicui/shimmer-button";
 import { BorderBeam } from "../magicui/border-beam";
-import { Button } from "../ui/button"; // Assuming a simple button for disconnect
 
 // --- Type Definitions ---
 interface NavItem {
@@ -19,9 +17,9 @@ interface NavItem {
 interface FloatingNavProps {
   navItems: NavItem[];
   className?: string;
-  connected: boolean;
-  onConnect: () => void;
-  onDisconnect: () => void;
+  connected?: boolean;
+  onConnect?: () => void;
+  onDisconnect?: () => void;
 }
 
 const poppins = Poppins({
@@ -36,6 +34,9 @@ export const FloatingNav = ({
   onConnect,
   onDisconnect,
 }: FloatingNavProps) => {
+  const isConnected = Boolean(connected);
+  const handleConnect = onConnect ?? (() => {});
+  const handleDisconnect = onDisconnect ?? (() => {});
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -106,7 +107,7 @@ export const FloatingNav = ({
         {/* Wallet Connection Section */}
         <div className="flex items-center">
           
-            <ShimmerButton onClick={onConnect}>
+            <ShimmerButton onClick={handleConnect}>
               <BorderBeam
                 duration={8}
                 colorFrom="#800080"
