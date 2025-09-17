@@ -47,7 +47,7 @@ export default function HeroSection() {
 
     return () => clearTimeout(timer)
   }, [])
-  const words = ["Investors", "Protocols","Founders"];
+  const words = ["Teams", "Investors", "Advisors"];
 
   return (
     <motion.div
@@ -92,7 +92,7 @@ export default function HeroSection() {
         transition={{ duration: 0.8, delay: 0.4 }}
       >
         
-        Digital Asset Management
+        Token Vesting & Streaming on Algorand
       </motion.h1>
 
       {/* Subheading */}
@@ -112,7 +112,7 @@ export default function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 2 }}
       >
-        Manage your token cap table, automate on-or-off chain vesting, account for tax deductions, execute airdrops, distribute conditional grants, utilize dynamic custody solutions and onboard in under a day.
+        Fenders automates token distribution with fully on-chain schedules, real-time streaming, DAO approvals, and transparent analytics—built for trust and transparency.
       </motion.p>
       
       {/* Email Signup Form */}
