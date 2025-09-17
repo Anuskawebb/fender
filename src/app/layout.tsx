@@ -8,9 +8,9 @@ import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  applicationName: "Fender",
-  title: "Fender",
-  description: "Token Vesting on Algorand",
+  applicationName: "Fenders",
+  title: "Fenders",
+  description: "Token Vesting & Streaming on Algorand",
   manifest: "/manifest.json",
 };
 
