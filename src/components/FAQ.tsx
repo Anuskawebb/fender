@@ -16,24 +16,24 @@ const poppins = Poppins({
 const FAQSection = () => {
   const faqData = [
     {
-      question: "How does Aptos Chain ensure my will's security?",
+      question: "How is vesting enforced?",
       answer:
-        "Aptos Chain provides immutable, transparent records of your will. Its high-speed performance and EVM compatibility ensure your wishes are securely stored and executed exactly as intended, with minimal risk of tampering or fraud.",
+        "Algorand smart contracts (TEAL/PyTeal) enforce schedules on-chain with immutable logic and full auditability.",
     },
     {
-      question: "What are the advantages of creating a will on Aptos?",
+      question: "Can beneficiaries withdraw at any time?",
       answer:
-        "Aptos offers fast transaction speeds, low costs, and eco-friendly operations. This means your will can be created, updated, and executed quickly and efficiently, with minimal environmental impact and transaction fees.",
+        "Yes. With real-time streaming, beneficiaries can withdraw vested tokens pro‑rata to time elapsed; unvested remains locked.",
     },
     {
-      question: "Can I update my will after it's been created on Aptos?",
+      question: "How are changes to schedules approved?",
       answer:
-        "Yes, our platform allows you to update your will at any time. Changes are recorded on the Aptos Chain, ensuring a clear audit trail while maintaining the flexibility to adapt to life changes.",
+        "Through DAO governance. Token holders vote to add/remove members or adjust parameters, preventing unilateral changes.",
     },
     {
-      question: "How does asset distribution work with a Aptos-based will?",
+      question: "What analytics and alerts are available?",
       answer:
-        "Assets are distributed according to the conditions set in your will's smart contract. This can include time-based releases, specific event triggers, or instant distribution upon verification of certain conditions.",
+        "Unlock dates, % vested, circulating vs locked supply, upcoming cliffs, plus Email/Telegram/Discord notifications.",
     },
   ]
 
