@@ -1,4 +1,3 @@
-
 "use client";
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -7,7 +6,6 @@ import { cn } from "@/lib/utils";
 
 import { ShimmerButton } from "../magicui/shimmer-button";
 import { BorderBeam } from "../magicui/border-beam";
-import { Button } from "../ui/button"; // Assuming a simple button for disconnect
 
 // --- Type Definitions ---
 interface NavItem {
@@ -19,9 +17,9 @@ interface NavItem {
 interface FloatingNavProps {
   navItems: NavItem[];
   className?: string;
-  connected: boolean;
-  onConnect: () => void;
-  onDisconnect: () => void;
+  connected?: boolean;
+  onConnect?: () => void;
+  onDisconnect?: () => void;
 }
 
 const poppins = Poppins({
@@ -29,13 +27,10 @@ const poppins = Poppins({
   subsets: ["latin"],
 });
 
-export const FloatingNav = ({
-  navItems,
-  className,
-  connected,
-  onConnect,
-  onDisconnect,
-}: FloatingNavProps) => {
+export const FloatingNav = ({ navItems, className, connected, onConnect, onDisconnect }: FloatingNavProps) => {
+  const isConnected = Boolean(connected);
+  const handleConnect = onConnect ?? (() => {});
+  const handleDisconnect = onDisconnect ?? (() => {});
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -49,7 +44,7 @@ export const FloatingNav = ({
         }}
         className={cn(
           "flex max-w-4xl fixed top-10 inset-x-0 mx-auto border border-white rounded-3xl bg-white backdrop-blur-md shadow-lg z-50 px-4 py-2 items-center justify-between space-x-2 overflow-hidden",
-          className
+          className,
         )}
       >
         {/* Animated gradient background */}
@@ -70,21 +65,8 @@ export const FloatingNav = ({
 
         {/* Logo and Brand Name */}
         <div className="flex items-center space-x-2">
-          <img
-            src="/images/logo.jpg"
-            alt="Fender"
-            width={50}
-            height={50}
-            className="rounded-full"
-          />
-          <span
-            className={cn(
-              "text-2xl font-semibold text-black dark:text-white",
-              poppins.className
-            )}
-          >
-            Fender
-          </span>
+          <img src="/images/logo.jpg" alt="Fenders" width={50} height={50} className="rounded-full" />
+          <span className={cn("text-2xl font-semibold text-black dark:text-white", poppins.className)}>Fenders</span>
         </div>
 
         {/* Navigation Links */}
@@ -95,7 +77,7 @@ export const FloatingNav = ({
               href={navItem.link}
               className={cn(
                 "relative text-neutral-800 dark:text-neutral-50 items-center flex space-x-1 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors",
-                poppins.className
+                poppins.className,
               )}
             >
               <span className="text-sm">{navItem.name}</span>
@@ -105,17 +87,10 @@ export const FloatingNav = ({
 
         {/* Wallet Connection Section */}
         <div className="flex items-center">
-          
-            <ShimmerButton onClick={onConnect}>
-              <BorderBeam
-                duration={8}
-                colorFrom="#800080"
-                size={40}
-                colorTo="#800080"
-              />
-              Connect Wallet
-            </ShimmerButton>
-          
+          <ShimmerButton onClick={handleConnect}>
+            <BorderBeam duration={8} colorFrom="#800080" size={40} colorTo="#800080" />
+            Connect Wallet
+          </ShimmerButton>
         </div>
       </motion.div>
     </AnimatePresence>
