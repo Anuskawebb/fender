@@ -1,13 +1,27 @@
-"use client"
+"use client";
 
-import { ChevronRight, Clock, Code, Leaf, Database, FileText, Shield, Zap, Users, BarChart3, Lock, TrendingUp, Globe } from "lucide-react"
-import { motion, type Variants } from "framer-motion"
-import { Poppins } from "next/font/google"
-import { cn } from "@/lib/utils"
+import {
+  ChevronRight,
+  Clock,
+  Code,
+  Leaf,
+  Database,
+  FileText,
+  Shield,
+  Zap,
+  Users,
+  BarChart3,
+  Lock,
+  TrendingUp,
+  Globe,
+} from "lucide-react";
+import { motion, type Variants } from "framer-motion";
+import { Poppins } from "next/font/google";
+import { cn } from "@/lib/utils";
 // import { AuroraText } from "@/components/magicui/aurora-text"
-import Link from "next/link"
-import AnimatedListDemo from "@/components/Notification"
-import { Bento1 } from "./bento1"
+import Link from "next/link";
+import AnimatedListDemo from "@/components/Notification";
+import { Bento1 } from "./bento1";
 // import { Notification } from "@/components/Notification"
 
 const poppins = Poppins({
@@ -15,7 +29,7 @@ const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-poppins",
-})
+});
 
 export default function BentoGrid() {
   // Animation variants
@@ -41,22 +55,25 @@ export default function BentoGrid() {
         ease: "easeInOut",
       },
     },
-  }
+  };
 
   return (
     <div className={cn("relative text-white px-4 md:px-6 z-10 py-20", poppins.className)}>
       <div className="w-full max-w-[95vw] lg:max-w-[1800px] mx-auto relative">
         <div className="grid grid-cols-12 grid-rows-6 gap-4 h-[800px] ">
           <motion.h1
-            className={cn("text-3xl md:text-4xl lg:text-5xl font-thin text-center mb-32 col-span-12 ", poppins.className)}
+            className={cn(
+              "text-3xl md:text-4xl lg:text-5xl font-thin text-center mb-32 col-span-12 ",
+              poppins.className,
+            )}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <span className="text-5xl text-white/80 leading-tight">Why Choose Fender ?</span>
+            <span className="text-5xl text-white/80 leading-tight">Why Choose Fenders?</span>
             <br />
             <span className="text-xl md:text-2xl font-light text-white/70 ">
-              Complete digital asset management platform—Built on Algorand.
+              Token vesting and streaming platform—Built on Algorand.
             </span>
           </motion.h1>
 
@@ -70,15 +87,13 @@ export default function BentoGrid() {
               custom={0}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-[#800080]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
-              
+
               <div className="relative z-10 h-full flex flex-col">
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-[#df500f]/20 rounded-xl flex items-center justify-center border border-white/10 mr-4">
                     <Shield className="w-6 h-6 text-[#df500f]" />
                   </div>
-                  <h2 className="text-2xl font-thin leading-tight text-white">
-                    Security First
-                  </h2>
+                  <h2 className="text-2xl font-thin leading-tight text-white">Security First</h2>
                 </div>
                 <p className="text-white/90 text-sm font-light mb-4">
                   Bank-grade security with Algorand's proven blockchain technology
@@ -198,10 +213,10 @@ export default function BentoGrid() {
               <div className="relative z-10 h-full flex flex-col">
                 <div className="mb-6">
                   <h3 className="text-xl font-thin mb-2 text-white">Vesting, Verified by the People</h3>
-                  <p className="text-white/90 text-sm font-light">A new standard for accountability in token distribution.</p>
+                  <p className="text-white/90 text-sm font-light">
+                    DAO-approved schedules, real-time analytics, and alerts.
+                  </p>
                 </div>
-                
-                
               </div>
             </motion.div>
           </Link>
@@ -219,14 +234,12 @@ export default function BentoGrid() {
 
               <div className="relative z-10 h-full flex flex-col">
                 {/* Smart Contract Cards */}
-                <div className="mb-4 flex-1 flex flex-col justify-start">
-                  {/* <AnimatedListDemo /> */}
-                </div>
+                <div className="mb-4 flex-1 flex flex-col justify-start">{/* <AnimatedListDemo /> */}</div>
               </div>
             </motion.div>
           </Link>
         </div>
       </div>
     </div>
-  )
+  );
 }

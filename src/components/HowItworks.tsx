@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { FileText, Shield, Edit } from "lucide-react"
-import { motion, type Variants } from "framer-motion"
-import { Poppins } from "next/font/google"
-import { cn } from "@/lib/utils"
+import { FileText, Shield, Edit } from "lucide-react";
+import { motion, type Variants } from "framer-motion";
+import { Poppins } from "next/font/google";
+import { cn } from "@/lib/utils";
 // import { AuroraText } from "@/components/magicui/aurora-text"
 
 const poppins = Poppins({
@@ -11,7 +11,7 @@ const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-poppins",
-})
+});
 
 export default function HowItWorks() {
   // Animation variants
@@ -36,7 +36,7 @@ export default function HowItWorks() {
         ease: "easeInOut",
       },
     },
-  }
+  };
 
   const iconVariants: Variants = {
     initial: {
@@ -59,55 +59,54 @@ export default function HowItWorks() {
         ease: "easeInOut",
       },
     },
-  }
+  };
 
   const steps = [
     {
       icon: FileText,
       step: "Step 1",
-      title: "Set Up & Fund Your Will",
+      title: "Create Vesting Schedule",
       description:
-        "Initialize your will by specifying a recipient and the amount to be inherited. Funds are securely locked in the contract on the Aptos blockchain.",
+        "Define terms for teams, investors, and advisors: linear, cliff + linear, milestone, or performance‑based models.",
       features: [
-        "Specify recipient address",
-        "Choose inheritance amount",
-        "Funds locked in contract",
-        "Immutable blockchain record",
-        "Global registry for recipients",
-        "Aptos network security",
+        "Per‑beneficiary allocations",
+        "Cliffs, durations, start dates",
+        "On‑chain parameters",
+        "Real‑time streaming option",
+        "DAO approval for changes",
+        "Exportable proofs",
       ],
     },
     {
       icon: Shield,
       step: "Step 2",
-      title: "Stay Active with Pings",
+      title: "Deploy Smart Contract",
       description:
-        "Periodically 'ping' the contract to prove you're active. If you don't ping within the set timeout, your will becomes claimable by the recipient.",
+        "Publish immutable logic to Algorand. Schedules execute trustlessly with on‑chain audit logs and investor protections.",
       features: [
-        "Ping to show activity",
-        "Customizable timeout period",
-        "Automated monitoring",
-        "No third-party required",
-        "Transparent status tracking",
-        "Owner-controlled updates",
+        "TEAL/PyTeal contracts",
+        "Clawback for unvested",
+        "On‑chain auditability",
+        "Role‑based controls",
+        "Low fees, fast finality",
+        "Pera Wallet signing",
       ],
     },
     {
       icon: Edit,
       step: "Step 3",
-      title: "Claim by Recipient",
-      description:
-        "If the timeout passes without a ping, the recipient can claim the locked assets. The process is secure, automated, and transparent.",
+      title: "Stream & Withdraw",
+      description: "Tokens drip continuously. Beneficiaries track analytics and withdraw vested amounts any time.",
       features: [
-        "Automatic eligibility check",
-        "Secure asset transfer",
-        "No manual intervention",
-        "View claimable wills",
-        "Instant execution",
-        "Full auditability",
+        "% vested and unlock dates",
+        "Circulating vs locked",
+        "Upcoming cliffs",
+        "Email/Telegram/Discord alerts",
+        "Personal dashboards",
+        "Instant, pro‑rata withdrawals",
       ],
     },
-  ]
+  ];
 
   return (
     <div className={cn("relative text-white py-20 px-4 md:px-6 z-10 bg-[#0e090200]", poppins.className)}>
@@ -140,9 +139,7 @@ export default function HowItWorks() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-
             <span className="text-5xl text-white/80 leading-tight">How It Works</span>
-
           </motion.h1>
           <motion.p
             className="text-white/70 text-2xl font-light"
@@ -150,14 +147,14 @@ export default function HowItWorks() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.7 }}
           >
-            Create your digital legacy in three simple steps on the Aptos blockchain.
+            Automate vesting in three simple steps on the Algorand blockchain.
           </motion.p>
         </motion.div>
 
         {/* Steps Grid - Now 3 columns */}
         <div className="grid md:grid-cols-3 gap-8">
           {steps.map((step, index) => {
-            const IconComponent = step.icon
+            const IconComponent = step.icon;
             return (
               <motion.div
                 key={index}
@@ -226,7 +223,7 @@ export default function HowItWorks() {
                   </motion.div>
                 </div>
               </motion.div>
-            )
+            );
           })}
         </div>
 
@@ -236,5 +233,5 @@ export default function HowItWorks() {
         </div>
       </div>
     </div>
-  )
+  );
 }
