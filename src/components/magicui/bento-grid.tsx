@@ -53,10 +53,10 @@ export default function BentoGrid() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <span className="text-5xl text-white/80 leading-tight">Why Choose Fender ?</span>
+            <span className="text-5xl text-white/80 leading-tight">Why Choose Fenders?</span>
             <br />
             <span className="text-xl md:text-2xl font-light text-white/70 ">
-              Complete digital asset management platform—Built on Algorand.
+              Token vesting and streaming platform—Built on Algorand.
             </span>
           </motion.h1>
 
@@ -198,7 +198,7 @@ export default function BentoGrid() {
               <div className="relative z-10 h-full flex flex-col">
                 <div className="mb-6">
                   <h3 className="text-xl font-thin mb-2 text-white">Vesting, Verified by the People</h3>
-                  <p className="text-white/90 text-sm font-light">A new standard for accountability in token distribution.</p>
+                  <p className="text-white/90 text-sm font-light">DAO-approved schedules, real-time analytics, and alerts.</p>
                 </div>
                 
                 
