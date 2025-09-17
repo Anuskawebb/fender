@@ -1,6 +1,15 @@
-export interface NavItem { name: string; link: string }
-export interface Feature { title: string; bullets: string[] }
-export interface FAQItem { q: string; a: string }
+export interface NavItem {
+  name: string;
+  link: string;
+}
+export interface Feature {
+  title: string;
+  bullets: string[];
+}
+export interface FAQItem {
+  q: string;
+  a: string;
+}
 
 export const vestingContent = {
   brand: {
@@ -26,8 +35,7 @@ export const vestingContent = {
   },
   overview: {
     title: "Overview",
-    body:
-      "A decentralized Token Vesting & Streaming Platform built on Algorand, enabling secure distribution for team members, investors, and advisors—without centralized control.",
+    body: "A decentralized Token Vesting & Streaming Platform built on Algorand, enabling secure distribution for team members, investors, and advisors—without centralized control.",
   },
   problems: {
     title: "The Problem We Solve",
@@ -92,11 +100,7 @@ export const vestingContent = {
       },
       {
         title: "Investor‑Friendly Protections",
-        bullets: [
-          "Clawback for unvested tokens",
-          "Immutable audit logs on‑chain",
-          "Compliance‑ready exports",
-        ],
+        bullets: ["Clawback for unvested tokens", "Immutable audit logs on‑chain", "Compliance‑ready exports"],
       },
       {
         title: "Gamified Experience",
@@ -169,6 +173,6 @@ export const vestingContent = {
     ] as FAQItem[],
   },
   footer: {
-    smallPrint: "© "+new Date().getFullYear()+" Fender. Built on Algorand.",
+    smallPrint: "© " + new Date().getFullYear() + " Fender. Built on Algorand.",
   },
 } as const;

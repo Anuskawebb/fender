@@ -1,35 +1,35 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 // import { Github, Twitter, Linkedin } from "lucide-react"
-import { Poppins } from "next/font/google"
-import { cn } from "@/lib/utils"
-import { motion, useScroll, useTransform } from "framer-motion"
-import { useState, useEffect } from "react"
-import { Logos } from "./LogoCloud"
+import { Poppins } from "next/font/google";
+import { cn } from "@/lib/utils";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useState, useEffect } from "react";
+import { Logos } from "./LogoCloud";
 // import { AnimatedShinyTextDemo } from "./ShinyText"
 import { FlipWords } from "./ui/flip-words";
-import { Safari } from "./ui/safari"
-import { DashboardCard } from "./ui/dashboardcard"
-import { Card } from "@/components/ui/card"
-import { Clock, Heart } from "lucide-react"
+import { Safari } from "./ui/safari";
+import { DashboardCard } from "./ui/dashboardcard";
+import { Card } from "@/components/ui/card";
+import { Clock, Heart } from "lucide-react";
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
   variable: "--font-poppins",
-})
+});
 
 export default function HeroSection() {
   //@ts-ignore
-  const [count, setCount] = useState(0)
-  const { scrollY } = useScroll()
-  const y1 = useTransform(scrollY, [0, 300], [0, -50])
+  const [count, setCount] = useState(0);
+  const { scrollY } = useScroll();
+  const y1 = useTransform(scrollY, [0, 300], [0, -50]);
   //@ts-ignore
-  const y2 = useTransform(scrollY, [0, 300], [0, -30])
-  const opacity = useTransform(scrollY, [0, 300], [1, 0.8])
+  const y2 = useTransform(scrollY, [0, 300], [0, -30]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0.8]);
 
   // Animated counter effect
   useEffect(() => {
@@ -37,16 +37,16 @@ export default function HeroSection() {
       const interval = setInterval(() => {
         setCount((prev) => {
           if (prev < 2400) {
-            return prev + 50
+            return prev + 50;
           }
-          clearInterval(interval)
-          return 2400
-        })
-      }, 30)
-    }, 1000)
+          clearInterval(interval);
+          return 2400;
+        });
+      }, 30);
+    }, 1000);
 
-    return () => clearTimeout(timer)
-  }, [])
+    return () => clearTimeout(timer);
+  }, []);
   const words = ["Teams", "Investors", "Advisors"];
 
   return (
@@ -82,7 +82,7 @@ export default function HeroSection() {
       </div>
 
       {/* Waitlist Counter */}
-     
+
       {/* <AnimatedShinyTextDemo /> */}
       {/* Main Heading without typewriter effect */}
       <motion.h1
@@ -91,7 +91,6 @@ export default function HeroSection() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.4 }}
       >
-        
         Token Vesting & Streaming on Algorand
       </motion.h1>
 
@@ -112,9 +111,10 @@ export default function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 2 }}
       >
-        Fenders automates token distribution with fully on-chain schedules, real-time streaming, DAO approvals, and transparent analytics—built for trust and transparency.
+        Fenders automates token distribution with fully on-chain schedules, real-time streaming, DAO approvals, and
+        transparent analytics—built for trust and transparency.
       </motion.p>
-      
+
       {/* Email Signup Form */}
       <motion.div
         className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-12 w-full max-w-lg"
@@ -144,13 +144,7 @@ export default function HeroSection() {
         </motion.div>
       </motion.div>
       <div className="mt-2 ">
-      <Safari
-        url="magicui.design"
-        className="size-half bg-black"
-        imageSrc="/images/dashboard.png"
-      />
-      
-      
+        <Safari url="magicui.design" className="size-half bg-black" imageSrc="/images/dashboard.png" />
       </div>
 
       {/* Social Media Icons */}
@@ -162,11 +156,9 @@ export default function HeroSection() {
       >
         <Logos />
       </motion.div>
-      
     </motion.div>
-  )
+  );
 }
-
 
 // <div className="flex flex-col lg:flex-row items-center justify-center gap-8 mb-20">
 //           {/* Left Card - The Decal Felix */}

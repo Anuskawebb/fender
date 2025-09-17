@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { FileText, Shield, Edit } from "lucide-react"
-import { motion, type Variants } from "framer-motion"
-import { Poppins } from "next/font/google"
-import { cn } from "@/lib/utils"
+import { FileText, Shield, Edit } from "lucide-react";
+import { motion, type Variants } from "framer-motion";
+import { Poppins } from "next/font/google";
+import { cn } from "@/lib/utils";
 // import { AuroraText } from "@/components/magicui/aurora-text"
 
 const poppins = Poppins({
@@ -11,7 +11,7 @@ const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-poppins",
-})
+});
 
 export default function HowItWorks() {
   // Animation variants
@@ -36,7 +36,7 @@ export default function HowItWorks() {
         ease: "easeInOut",
       },
     },
-  }
+  };
 
   const iconVariants: Variants = {
     initial: {
@@ -59,7 +59,7 @@ export default function HowItWorks() {
         ease: "easeInOut",
       },
     },
-  }
+  };
 
   const steps = [
     {
@@ -96,8 +96,7 @@ export default function HowItWorks() {
       icon: Edit,
       step: "Step 3",
       title: "Stream & Withdraw",
-      description:
-        "Tokens drip continuously. Beneficiaries track analytics and withdraw vested amounts any time.",
+      description: "Tokens drip continuously. Beneficiaries track analytics and withdraw vested amounts any time.",
       features: [
         "% vested and unlock dates",
         "Circulating vs locked",
@@ -107,7 +106,7 @@ export default function HowItWorks() {
         "Instant, pro‑rata withdrawals",
       ],
     },
-  ]
+  ];
 
   return (
     <div className={cn("relative text-white py-20 px-4 md:px-6 z-10 bg-[#0e090200]", poppins.className)}>
@@ -140,9 +139,7 @@ export default function HowItWorks() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-
             <span className="text-5xl text-white/80 leading-tight">How It Works</span>
-
           </motion.h1>
           <motion.p
             className="text-white/70 text-2xl font-light"
@@ -157,7 +154,7 @@ export default function HowItWorks() {
         {/* Steps Grid - Now 3 columns */}
         <div className="grid md:grid-cols-3 gap-8">
           {steps.map((step, index) => {
-            const IconComponent = step.icon
+            const IconComponent = step.icon;
             return (
               <motion.div
                 key={index}
@@ -226,7 +223,7 @@ export default function HowItWorks() {
                   </motion.div>
                 </div>
               </motion.div>
-            )
+            );
           })}
         </div>
 
@@ -236,5 +233,5 @@ export default function HowItWorks() {
         </div>
       </div>
     </div>
-  )
+  );
 }

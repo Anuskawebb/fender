@@ -1,17 +1,16 @@
-"use client"
+"use client";
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { motion, easeOut } from "framer-motion"
-import { Poppins } from "next/font/google"
-import { cn } from "@/lib/utils"
-
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { motion, easeOut } from "framer-motion";
+import { Poppins } from "next/font/google";
+import { cn } from "@/lib/utils";
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
   variable: "--font-poppins",
-})
+});
 
 const FAQSection = () => {
   const faqData = [
@@ -35,7 +34,7 @@ const FAQSection = () => {
       answer:
         "Unlock dates, % vested, circulating vs locked supply, upcoming cliffs, plus Email/Telegram/Discord notifications.",
     },
-  ]
+  ];
 
   const containerVariants = {
     initial: { opacity: 0 },
@@ -46,7 +45,7 @@ const FAQSection = () => {
         delayChildren: 0.2,
       },
     },
-  }
+  };
 
   const itemVariants = {
     initial: { opacity: 0, y: 20 },
@@ -58,7 +57,7 @@ const FAQSection = () => {
         ease: easeOut,
       },
     },
-  }
+  };
 
   return (
     <section className={cn("py-20 px-4 sm:px-6 lg:px-8 bg-[#0e090200] relative", poppins.className)}>
@@ -136,7 +135,7 @@ const FAQSection = () => {
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default FAQSection
+export default FAQSection;
