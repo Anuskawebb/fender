@@ -73,7 +73,7 @@ export const FloatingNav = ({
         <div className="flex items-center space-x-2">
           <img
             src="/images/logo.jpg"
-            alt="Fender"
+            alt="Fenders"
             width={50}
             height={50}
             className="rounded-full"
@@ -84,7 +84,7 @@ export const FloatingNav = ({
               poppins.className
             )}
           >
-            Fender
+            Fenders
           </span>
         </div>
 
